@@ -1,0 +1,1 @@
+json.partial! "rockhounds/rockhound", rockhound: @rockhound

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @rockhound.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @rockhound.email %>
+</p>
+
+<%= link_to 'Edit', edit_rockhound_path(@rockhound) %> |
+<%= link_to 'Back', rockhounds_path %>

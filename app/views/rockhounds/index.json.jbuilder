@@ -1,0 +1,1 @@
+json.array! @rockhounds, partial: 'rockhounds/rockhound', as: :rockhound

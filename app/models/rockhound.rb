@@ -1,0 +1,2 @@
+class Rockhound < ApplicationRecord
+end

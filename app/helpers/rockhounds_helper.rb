@@ -1,0 +1,2 @@
+module RockhoundsHelper
+end
