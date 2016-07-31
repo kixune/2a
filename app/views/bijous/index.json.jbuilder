@@ -1,0 +1,1 @@
+json.array! @bijous, partial: 'bijous/bijou', as: :bijou

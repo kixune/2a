@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Bijous</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bijous.each do |bijou| %>
+      <tr>
+        <td><%= bijou.name %></td>
+        <td><%= bijou.description %></td>
+        <td><%= link_to 'Show', bijou %></td>
+        <td><%= link_to 'Edit', edit_bijou_path(bijou) %></td>
+        <td><%= link_to 'Destroy', bijou, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bijou', new_bijou_path %>

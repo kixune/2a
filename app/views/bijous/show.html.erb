@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @bijou.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @bijou.description %>
+</p>
+
+<%= link_to 'Edit', edit_bijou_path(@bijou) %> |
+<%= link_to 'Back', bijous_path %>
