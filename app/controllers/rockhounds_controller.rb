@@ -29,6 +29,7 @@ class RockhoundsController < ApplicationController
 
     respond_to do |format|
       if @rockhound.save
+
         format.html { redirect_to @rockhound, notice: 'Rockhound was successfully created.' }
         format.json { render :show, status: :created, location: @rockhound }
       else
