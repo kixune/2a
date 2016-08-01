@@ -1,3 +1,7 @@
+$red: #D11D05;
+$off-white: #fee;
+$yellow: #f4c141;
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
@@ -41,6 +45,38 @@ p {
 }
 
 
+img {
+  display: none;
+}
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #777;
+}
+
+footer a {
+  color: #555;
+}
+
+footer a:hover {
+  color: #222;
+}
+
+footer small {
+  float: left;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 15px;
+}
 
 .center {
   text-align: center;
@@ -48,4 +84,56 @@ p {
 
 .center h1 {
   margin-bottom: 10px;
+}
+
+.navbar-inverse {
+  background-color: $red;
+  border-color: #fff;
+}
+.navbar-inverse .navbar-nav > li > a {
+  color: #fff;
+    &:hover {
+      background-color: $off-white;
+      color: #000;
+    }
+    &:active {
+      background-color: $off-white;
+      color: #fff;
+  }
+}
+
+.jumbotron {
+  background-color: $off-white;
+}
+
+.btn-primary {
+  background-color: $yellow;
+  border-color: transparent;
+}
+
+
+
+#logo {
+  font-size: 3em;
+  color: #fff;
+  text-transform: uppercase;
+  text-shadow: 0 5px 6px #000, 0 5px 6px #000;
+  letter-spacing: -6px;
+  font-weight: bold;
+  display: block;
+  padding-top: 30px;
+  &:hover {
+    background-color: transparent;
+    text-decoration: none;
+  }
+
+}
+#rbmrtlogo {
+  width: 30px;
+  height: 30px;
+  text-decoration: none;
+  &:hover {
+    background-color: transparent;
+    text-decoration: none;
+  }
 }

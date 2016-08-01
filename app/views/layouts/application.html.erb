@@ -6,25 +6,15 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= render 'partials/shim' %>
   </head>
 
   <body>
-    <header class="navbar navbar-fixed-top navbar-inverse">
-      <div class="container">
-        <%= link_to image_tag("gem.png", alt: "Rubymart Logo", id: "rbmrtlogo"), '/home' %>
-        <%= link_to "Rubymart", '/home', id: "logo" %>
-        <nav>
-          <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "Home",   '/home' %></li>
-            <li><%= link_to "About",   '/about' %></li>
-            <li><%= link_to "Help",   '/help' %></li>
-            <li><%= link_to "Log in", '#' %></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+    <%= render 'partials/header' %>
+
     <div class="container">
       <%= yield %>
+      <%= render 'partials/footer' %>
     </div>
   </body>
 </html>
