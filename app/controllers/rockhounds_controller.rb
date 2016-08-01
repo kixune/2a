@@ -10,6 +10,7 @@ class RockhoundsController < ApplicationController
   # GET /rockhounds/1
   # GET /rockhounds/1.json
   def show
+    @rockhound = Rockhound.find(params[:id])
   end
 
   # GET /rockhounds/new
