@@ -93,6 +93,36 @@ footer ul li {
   margin-left: 15px;
 }
 
+/* forms */
+
+input, textarea, select, .uneditable-input {
+
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
+}
+
+#error_explanation {
+  color: red;
+  text-align: center;
+  list-style: none;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
+}
+
 .center {
   text-align: center;
 }
@@ -124,6 +154,12 @@ footer ul li {
 .btn-primary {
   background-color: $yellow;
   border-color: transparent;
+
+  &:hover, &:active, &:focus {
+    background-color: lighten($yellow, 20%) !important;
+    border-color: transparent;
+  }
+
 }
 
 

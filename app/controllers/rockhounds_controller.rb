@@ -70,6 +70,6 @@ class RockhoundsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def rockhound_params
-      params.require(:rockhound).permit(:name, :email)
+      params.require(:rockhound).permit(:name, :email, :password, :password_confirmation)
     end
 end
