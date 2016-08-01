@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= yield(:title) %> | Rubymart</title>
+    <title><%= full_title(yield(:title)) %></title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -18,8 +18,9 @@
         <%= link_to "sample app", '#', id: "logo" %>
         <nav>
           <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "Home",   '#' %></li>
-            <li><%= link_to "Help",   '#' %></li>
+            <li><%= link_to "Home",   '/home' %></li>
+            <li><%= link_to "About",   '/about' %></li>
+            <li><%= link_to "Help",   '/help' %></li>
             <li><%= link_to "Log in", '#' %></li>
           </ul>
         </nav>
