@@ -22,7 +22,7 @@ module SessionsHelper
     end
   end
 
-  def current_rockhound?
+  def current_rockhound?(rockhound)
     rockhound == current_rockhound
   end
 

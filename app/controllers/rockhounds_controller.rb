@@ -1,5 +1,7 @@
 class RockhoundsController < ApplicationController
-  before_action :set_rockhound, only: [:show, :edit, :update, :destroy]
+  before_action :set_rockhound,       only: [:show, :edit, :update, :destroy]
+  before_action :logged_in_rockhound, only: [:index, :edit, :update]
+  before_action :correct_rockhound,   only: [:edit, :update]
 
   # GET /rockhounds
   # GET /rockhounds.json
@@ -41,6 +43,7 @@ class RockhoundsController < ApplicationController
   def update
       if @rockhound.update(rockhound_params)
         flash[:success] = "Updated Information"
+        redirect_to @rockhound
       else
         render 'edit'
       end
@@ -66,4 +69,17 @@ class RockhoundsController < ApplicationController
     def rockhound_params
       params.require(:rockhound).permit(:name, :email, :password, :password_confirmation)
     end
+
+    def logged_in_rockhound
+      unless logged_in?
+        flash[:danger] = "Please log in first!"
+        redirect_to login_url
+      end
+    end
+
+    def correct_rockhound
+      @rockhound = Rockhound.find(params[:id])
+      redirect_to(root_url) unless current_rockhound?(@rockhound)
+    end
+
 end
