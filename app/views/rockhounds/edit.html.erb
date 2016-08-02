@@ -1,6 +1,8 @@
-<h1>Editing Rockhound</h1>
+<% provide(:title, @rockhound.name) %>
+<% provide(:button_text, "Save Changes") %>
+<h1>Update Your Info</h1>
 
-<%= render 'formtwo', rockhound: @rockhound %>
+<%= render '/partials/form', rockhound: @rockhound %>
 
 <%= link_to 'Show', @rockhound %> |
 <%= link_to 'Back', rockhounds_path %>

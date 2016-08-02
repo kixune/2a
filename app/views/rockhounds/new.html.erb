@@ -1,6 +1,7 @@
-<% provide(:title, 'Register') %>
+<% provide(:title, "Register") %>
+<% provide(:button_text, "Register") %>
 <h1>New Rockhound</h1>
 
-<%= render 'form', rockhound: @rockhound %>
+<%= render '/partials/form', rockhound: @rockhound %>
 
 <%= link_to 'Back', rockhounds_path %>

@@ -10,7 +10,6 @@ class RockhoundsController < ApplicationController
   # GET /rockhounds/1
   # GET /rockhounds/1.json
   def show
-    @rockhound = Rockhound.find(params[:id])
   end
 
   # GET /rockhounds/new
@@ -27,31 +26,24 @@ class RockhoundsController < ApplicationController
   def create
     @rockhound = Rockhound.new(rockhound_params)
 
-    respond_to do |format|
       if @rockhound.save
-        flash[:success] = "Welcome to Rubymart"
         log_in @rockhound
-        format.html { redirect_to @rockhound }
-        format.json { render :show, status: :created, location: @rockhound }
+        flash[:success] = "Welcome to Rubymart"
+        redirect_to @rockhound
       else
-        format.html { render :new }
-        format.json { render json: @rockhound.errors, status: :unprocessable_entity }
+        render 'new'
       end
-    end
+
   end
 
   # PATCH/PUT /rockhounds/1
   # PATCH/PUT /rockhounds/1.json
   def update
-    respond_to do |format|
       if @rockhound.update(rockhound_params)
-        format.html { redirect_to @rockhound, notice: 'Rockhound was successfully updated.' }
-        format.json { render :show, status: :ok, location: @rockhound }
+        flash[:success] = "Updated Information"
       else
-        format.html { render :edit }
-        format.json { render json: @rockhound.errors, status: :unprocessable_entity }
+        render 'edit'
       end
-    end
   end
 
   # DELETE /rockhounds/1
