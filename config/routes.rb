@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get '/about', to: 'static_pages#about'
   get '/help', to: 'static_pages#help'
   get '/register', to: 'rockhounds#new'
+  get '/profile/:id', to: 'rockhounds#show'
+
   get '/login', to: 'sessions#new'
   post'/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'

@@ -2,14 +2,16 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @rockhound.name %>
+    <strong>Name:</strong>
+    <%= @rockhound.name %>
 </p>
 
 <p>
-  <strong>Email:</strong>
-  <%= @rockhound.email %>
+    <strong>Email:</strong>
+    <%= @rockhound.email %>
 </p>
-
-<%= link_to 'Edit', edit_rockhound_path(@rockhound) %> |
-<%= link_to 'Back', rockhounds_path %>
+<div class="center">
+    <%= link_to 'Edit', edit_rockhound_path(@rockhound) %>
+    |
+    <%= link_to 'Back', rockhounds_path %>
+</div>

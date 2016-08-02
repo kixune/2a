@@ -7,7 +7,15 @@
         <li><%= link_to "Home",   '/home' %></li>
         <li><%= link_to "About",   '/about' %></li>
         <li><%= link_to "Help",   '/help' %></li>
-        <li><%= link_to "Log in", '/login' %></li>
+
+        <% if logged_in? %>
+        <li><%= link_to "Bijous", '/bijous' %></li>
+        <li><%= link_to "#{@current_rockhound.name}", "/profile/#{current_rockhound.id}" %></li>
+        <li><%= link_to "Log Out", '/logout', method: "delete" %></li>
+
+        <% else %>
+        <li><%= link_to "Log In", '/login' %></li>
+        <% end %>
       </ul>
     </nav>
   </div>
