@@ -3,6 +3,11 @@ class Rockhound < ApplicationRecord
   has_and_belongs_to_many :bijous
   before_save { email.downcase! }
   before_save { name.capitalize! }
+  after_initialize :init
+
+  def init
+      self.admin_rights  ||= false
+  end
 
   VALID_NAME_REGEX = /\A[a-zA-z]{2,50}\z/
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i

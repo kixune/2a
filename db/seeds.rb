@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Rockhound.create(name: "gemperor", email: "king@booboo.com", password: "password", password_confirmation: "password", admin_rights: true)
+
+
+Rockhound.create(name: "bigpao", email: "asd@123.com", password: "bigpao", password_confirmation: "bigpao")
