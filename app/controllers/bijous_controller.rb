@@ -1,5 +1,6 @@
 class BijousController < ApplicationController
-  before_action :set_bijou, only: [:show, :edit, :update, :destroy]
+  before_action :set_bijou, only: [:show,  :update, :destroy]
+  before_action :logged_in_rockhound, only: [:index, :show]
 
   # GET /bijous
   # GET /bijous.json
@@ -24,10 +25,13 @@ class BijousController < ApplicationController
   # POST /bijous
   # POST /bijous.json
   def create
-    @bijou = Bijou.new(bijou_params)
+    @current_bijou = current_rockhound;
+    # @bijou = Bijou.new(bijou_params)
+
+    @new_bijou = @current_bijou.bijous.build(bijou_params)
 
     respond_to do |format|
-      if @bijou.save
+      if @new_bijou.save
         format.html { redirect_to @bijou, notice: 'Bijou was successfully created.' }
         format.json { render :show, status: :created, location: @bijou }
       else
@@ -70,5 +74,12 @@ class BijousController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def bijou_params
       params.require(:bijou).permit(:name, :description)
+    end
+
+    def logged_in_rockhound
+      unless logged_in?
+        flash[:danger] = "Please log in first!"
+        redirect_to login_url
+      end
     end
 end

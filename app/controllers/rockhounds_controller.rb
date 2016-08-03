@@ -1,6 +1,6 @@
 class RockhoundsController < ApplicationController
   before_action :set_rockhound,       only: [:show, :edit, :update, :destroy]
-  before_action :logged_in_rockhound, only: [:index, :edit, :update]
+  before_action :logged_in_rockhound, only: [:index, :show, :edit, :update]
   before_action :correct_rockhound,   only: [:edit, :update]
 
   # GET /rockhounds
